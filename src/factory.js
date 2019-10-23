@@ -58,7 +58,8 @@ const Options = {
   build: process.env.DEBUG ? "debug" : "release",
   // this is ammma.net's default SessionServer's URI:
   sessionServerUrl: "/sessionserver",
-  storagePrefix: ""
+  storagePrefix: "",
+  storeDataUrls: true
 };
 const Factories = [];
 const ExportedClasses = {
@@ -506,7 +507,7 @@ export default class Factory {
 
     // check if we want to persist a draggable from a data URL
     if (options.persist && options.path && typeof options.path === 'string') {
-      if (BlobStorageHolder.isDataUrl(options.path)) {
+      if (Options.storeDataUrls && BlobStorageHolder.isDataUrl(options.path)) {
         const holder = new BlobStorageHolder(this.sessionServer, options.path);
         const index = this.recordEmptyCall();
         holder.getUrl().then(url => {
