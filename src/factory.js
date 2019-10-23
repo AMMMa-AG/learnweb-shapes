@@ -135,6 +135,13 @@ export default class Factory {
   }
 
   /**
+   * Sets the Session Server instance of this factory.
+   */
+  set sessionServer(value) {
+    this._sessionServer = value;
+  }
+
+  /**
    * Creates a configured Session Server.
    * This method is static and does not require a Factory instance.
    */
