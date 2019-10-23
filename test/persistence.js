@@ -12,6 +12,12 @@ $(function () {
     console.log(++count);
   });
 
+  var storageChangeEventCount = 0;
+  f1.desktop.storage.on("change", function(e) {
+    storageChangeEventCount++;
+    if (storageChangeEventCount % 1000 == 0) console.log("scec", storageChangeEventCount);
+  });
+
   f1.desktop.on("desktop:shapeschanged", function () {
     $("#count").text(f1.desktop.getShapes().length);
   });

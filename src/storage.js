@@ -2,6 +2,9 @@
  * $Id: storage.js 44365 2018-03-06 12:06:57Z robertj $
  */
 
+import {
+  createjs
+} from 'EaselJS';
 import store from 'store';
 import defaultTo from 'lodash/defaultTo';
 import forOwn from 'lodash/forOwn';
@@ -18,6 +21,14 @@ export default class Storage {
 
   get prefix() {
     return window.location.pathname + this.nameSpace;
+  }
+
+  raiseChangedEvent(key = undefined, value = undefined) {
+    return this.dispatchEvent({
+      type: 'change',
+      key,
+      value
+    });
   }
 
   /**
@@ -38,6 +49,7 @@ export default class Storage {
    */
   store(key, value) {
     store.set(this.prefix + key, value);
+    this.raiseChangedEvent(key, value);
   }
 
   /**
@@ -54,6 +66,7 @@ export default class Storage {
         store.remove(k);
       }
     });
+    this.raiseChangedEvent();
   }
 
   /**
@@ -108,6 +121,7 @@ export default class Storage {
     forOwn(bag, (value, key) => {
       store.set(key, value);
     });
+    this.raiseChangedEvent();
   }
 
   /**
@@ -144,3 +158,6 @@ export default class Storage {
     });
   }
 }
+
+// add EventDispatcher capabilities
+createjs.EventDispatcher.initialize(Storage.prototype);
