@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Tests</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js" integrity="sha256-WRc/eG3R84AverJv0zmqxAmdwQxstUpqkiE+avJ3WSo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js" integrity="sha256-aB35laj7IZhLTx58xw/Gm1EKOoJJKZt6RY+bH1ReHxs=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.14.0/js/canvas-to-blob.min.js" integrity="sha256-CeBz6ph2imsCxljJfaQYaMRiRYRtW/TP5kH7REY3qvQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+
+  <script src="../lib/shapes.js"></script>
+  <script src="test.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./"><img class="img-responsive" style="width:80px" src="img/ammma-logo.svg"></a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" onclick="shapes.Factory.clearStorage(true)">Clear local storage</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Test! ;)</h1>
+
+    <h3>canvas1</h3>
+
+    <div class="lw-fullscreen-container">
+      <button type="button" class="btn btn-interactive" id="colorpicker1">
+        <img src="img/btn_pipette.svg"/>
+      </button>
+      <button type="button" class="btn btn-interactive" id="a1_crop">
+        <img src="img/btn_crop.svg"/>
+      </button>
+      <button type="button" class="btn btn-interactive" id="a1_freehand">
+        <img src="img/btn_freehand.svg"/>
+      </button>
+      <button type="button" class="btn btn-info btn-interactive" id="a1_screenshot">
+        Screenshot
+      </button>
+      <button type="button" class="btn btn-info btn-interactive" id="a1_getcode">
+        Call Log
+      </button>
+      <button type="button" class="fullscreen-btn btn btn-info btn-interactive">
+        Full Screen
+      </button>
+
+      <div class="learnweb-shapes">
+        <canvas id="canvas1" width="640" height="480" style="background-color: lightcyan"></canvas>
+      </div>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    </p>
+
+    <h3>canvas2</h3>
+
+    <div class="lw-fullscreen-container">
+      <button type="button" class="btn btn-interactive" id="a2_test">
+        <img src="img/btn_number.svg" />
+      </button>
+      <button type="button" class="btn btn-interactive" id="colorpicker2">
+        <img src="img/btn_pipette.svg" />
+      </button>
+      <button type="button" class="btn btn-interactive" id="a2_crop">
+        <img src="img/btn_crop.svg" />
+      </button>
+      <button type="button" class="fullscreen-btn btn btn-info btn-interactive">
+        Full Screen
+      </button>
+      <div class="learnweb-shapes">
+        <canvas id="canvas2" width="640" height="480" style="background-color: lightgoldenrodyellow"></canvas>
+      </div>
+    </div>
+
+    <h3>canvas3</h3>
+
+    <div class="lw-fullscreen-container">
+      <button type="button" class="btn btn-interactive" id="f3_red">
+      <img src="img/btn_red.svg"/>
+      </button>
+      <button type="button" class="btn btn-interactive" id="f3_green">
+        <img src="img/btn_green.svg"/>
+      </button>
+      <button type="button" class="fullscreen-btn btn btn-info btn-interactive">
+        Full Screen
+      </button>
+      <div class="learnweb-shapes">
+        <canvas id="canvas3" width="640" height="480" style="background-color: lightcyan"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Screenshot Template -->
+  <div id="screenShotModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Screenshot</h4>
+        </div>
+        <div class="modal-body">
+          <img id="screenShotModalPreview" class="image-responsive center-block" width="400">
+        </div>
+        <div class="modal-footer">
+          <a id="screenShotModalOpen" role="button" class="btn btn-default" href="#" target="_blank">Bild öffnen</a>
+          <a id="screenShotModalSave" role="button" class="btn btn-default" href="#" download="screenshot.png">Bild speichern</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

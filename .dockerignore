@@ -1,0 +1,10 @@
+*~
+.*~
+*.cmd
+.container-name
+.svn
+.vscode
+ci.sh
+lib
+dist
+node_modules

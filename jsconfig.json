@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "target": "ES6"
+  },
+  "include": [
+    "src/**/*.js"
+  ],
+  "files":[
+   "src/globals.d.ts"
+  ]
+}

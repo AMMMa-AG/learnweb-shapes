@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Tests</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js" integrity="sha256-WRc/eG3R84AverJv0zmqxAmdwQxstUpqkiE+avJ3WSo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js" integrity="sha256-aB35laj7IZhLTx58xw/Gm1EKOoJJKZt6RY+bH1ReHxs=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.14.0/js/canvas-to-blob.min.js" integrity="sha256-CeBz6ph2imsCxljJfaQYaMRiRYRtW/TP5kH7REY3qvQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+
+  <script src="../lib/shapes.js"></script>
+  <script>
+    $(function() {
+      $('#number').load('./ver.txt', function (res, status) {
+        if (status == "error") {
+          $('#version').remove();
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"><img class="img-responsive" style="width:80px" src="img/ammma-logo.svg"></a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>LearnWeb.Shapes-Tests</h1>
+
+    <div class="list-group">
+      <a class="list-group-item" href="test.html">Test</a>
+      <a class="list-group-item" href="tf.html">Textfields &amp; Bubbles</a>
+      <a class="list-group-item" href="eb.html">Edit Box</a>
+      <a class="list-group-item" href="dragdrop.html">Drag&amp;Drop Exercise</a>
+      <a class="list-group-item" href="layout.html">Layout</a>
+      <a class="list-group-item" href="tf-bug.html">Textfield-Bug w/ Bootstrap Libs</a>
+      <a class="list-group-item" href="server.html">Server Tests</a>
+      <a class="list-group-item" href="video.html">Fullscreen Video Tests</a>
+      <a class="list-group-item" href="call-order-bug.html">Call Order Bug</a>
+      <a class="list-group-item" href="persistence.html">Persistence Tests</a>
+      <a class="list-group-item" href="upload.html">Upload Tests</a>
+      <a class="list-group-item" href="player.html">Player Tests</a>
+      <a class="list-group-item" href="options-dialog.html">Options Dialog</a>
+    </div>
+
+    <p id="version" class="text-muted text-center">
+      <small>Version <span id="number"></span></small>
+    </p>
+  </div>
+</body>
+</html>

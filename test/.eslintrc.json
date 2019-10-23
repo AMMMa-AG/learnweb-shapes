@@ -1,0 +1,25 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 5,
+    "sourceType": "script"
+  },
+  "env": {
+    "browser": true,
+    "jquery": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "no-unused-vars": [
+      "warn",
+      {
+        "args": "none"
+      }
+    ],
+    "no-console": "off",
+    "no-var": "off",
+    "no-mixed-spaces-and-tabs": "off"
+  },
+  "globals": {
+    "shapes": false
+  }
+}

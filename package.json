@@ -1,0 +1,55 @@
+{
+  "name": "learnweb-shapes",
+  "version": "0.0.70",
+  "description": "LearnWeb Shapes",
+  "author": "AMMMa AG",
+  "homepage": "https://ammma.de/",
+  "license": "AGPL",
+  "private": false,
+  "main": "lib/shapes.js",
+  "module": "src/index.js",
+  "scripts": {
+    "build": "webpack --env production",
+    "build:dev": "webpack --env dev",
+    "dev": "webpack --progress --colors --watch --env dev",
+    "serve": "webpack-dev-server --open --env dev",
+    "serve:vs": "webpack-dev-server --env dev",
+    "lint": "eslint src || exit 0",
+    "pack": "npm run build && npm pack"
+  },
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.3",
+    "babel-eslint": "8.0.3",
+    "babel-loader": "7.1.2",
+    "babel-plugin-transform-async-to-generator": "6.24.1",
+    "babel-plugin-transform-runtime": "6.23.0",
+    "babel-preset-es2015": "6.24.1",
+    "clean-webpack-plugin": "0.1.17",
+    "createjs-easeljs": "0.8.2",
+    "createjs-tweenjs": "0.6.0",
+    "css-loader": "0.28.7",
+    "dropzone": "5.5.1",
+    "es6-mixin": "0.3.0",
+    "eslint": "4.12.1",
+    "eslint-loader": "1.9.0",
+    "exports-loader": "0.6.4",
+    "imports-loader": "0.7.1",
+    "lodash": "^4.17.15",
+    "quill": "^1.3.7",
+    "screenfull": "3.3.3",
+    "store": "2.0.12",
+    "style-loader": "0.19.0",
+    "webpack": "3.9.1",
+    "webpack-dev-server": "2.7.1",
+    "word-wrap": "1.2.3",
+    "yargs": "10.0.3"
+  },
+  "dependencies": {
+    "babel-runtime": "6.26.0",
+    "jquery": "^3.4.1"
+  }
+}

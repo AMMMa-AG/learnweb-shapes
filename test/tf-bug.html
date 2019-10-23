@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js" integrity="sha256-WRc/eG3R84AverJv0zmqxAmdwQxstUpqkiE+avJ3WSo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js" integrity="sha256-aB35laj7IZhLTx58xw/Gm1EKOoJJKZt6RY+bH1ReHxs=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.14.0/js/canvas-to-blob.min.js" integrity="sha256-CeBz6ph2imsCxljJfaQYaMRiRYRtW/TP5kH7REY3qvQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+
+  <script src="../lib/shapes.js"></script>
+  <script src="tf-bug.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./"><img class="img-responsive" style="width:80px" src="img/ammma-logo.svg"></a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" onclick="shapes.Factory.clearStorage(true)">Clear local storage</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <h3>Textfield-Bug with Bootstrap Libs</h3>
+    <p>
+      Resize funktioniert irgendwie rückwärts :)
+    </p>
+    <p>
+      <span class="label label-success">Fixed</span>
+      Gefixt in <a href="https://ammma.net/s/?r=KNQWY5DFMRPV7BBEZIFKZ5WFXCQWB4XKO5E66RA" target="_blank">r42732</a> und
+      <a href="https://ammma.net/s/?r=KNQWY5DFMRPV7FWA4SVKO4N7ZDG536UVJ4PQNHI" target="_blank">r43510</a>
+    </p>
+
+    <div class="learnweb-shapes">
+      <canvas id="canvas1" width="640" height="480" style="background-color: lightcyan"></canvas>
+    </div>
+
+  </div>
+</body>
+</html>
